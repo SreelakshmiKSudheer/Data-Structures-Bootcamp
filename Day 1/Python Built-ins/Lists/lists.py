@@ -15,7 +15,7 @@ print('apple' in fruits) # Membership → True
 for fruit in fruits:
     print(fruit)
 
-'''LIst methods'''
+'''List methods'''
 # Adding
 fruits.append('date')               # Add at end
 fruits.insert(1, 'banana')          # Add at specific index
