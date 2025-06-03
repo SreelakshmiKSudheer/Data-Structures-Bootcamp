@@ -6,7 +6,7 @@ def bubble_sort(arr):
     for i in range(n):
         # Last i elements are already sorted, so we don't need to compare them
         # We loop only up to n - i - 1 to avoid going out of bounds when accessing arr[j + 1]
-        for j in range(0, n - i - 1):
+        for j in range(n - i - 1):
             # Swap if current element is greater than next
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
