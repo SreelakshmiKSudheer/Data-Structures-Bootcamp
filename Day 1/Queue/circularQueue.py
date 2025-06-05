@@ -1,8 +1,11 @@
 class CircularQueue:
-    # Circular Queue: A linear data structure that uses a fixed-size buffer in a circular manner,
-    # allowing efficient use of space by reusing freed positions.
-    # front: points to the first element in the queue
-    # rear: points to the last element in the queue
+
+    '''
+    Circular Queue: A linear data structure that uses a fixed-size buffer in a circular manner,
+    allowing efficient use of space by reusing freed positions.
+    front: points to the first element in the queue
+    rear: points to the last element in the queue
+    '''
 
     def __init__(self, size):
         # Initialize the circular queue with a fixed size
@@ -23,6 +26,8 @@ class CircularQueue:
         # Move rear to next position
         self.rear = (self.rear + 1) % self.size
         self.queue[self.rear] = value
+        print(f"Inserted {value} into the queue")
+        print(f"Queue state: {self.queue}")
 
     def dequeue(self):
         if self.front == -1: 
