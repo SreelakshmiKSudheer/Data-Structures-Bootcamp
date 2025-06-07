@@ -31,3 +31,6 @@ print("Sorted array:  ", arr)
 # # Step 3: [5, 11, 12, 13, 6]
 # Step 4: [5, 6, 11, 12, 13]   
 # Sorted array:  [5, 6, 11, 12, 13]
+
+# Time Complexity: O(n^2) in the worst case, O(n) in the best case (when the array is already sorted)
+# Space Complexity: O(1) as it sorts the array in place
