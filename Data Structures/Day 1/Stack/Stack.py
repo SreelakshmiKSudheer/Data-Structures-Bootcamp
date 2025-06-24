@@ -1,47 +1,40 @@
-def display(stack, top):
-    print("\nStack:", end=" ")
-    i = 0
-    while i <= top:
-        print(stack[i], end=" ")
-        i += 1
-    print()
+# Create a stack with given capacity
+class Stack:
+    def __init__(self, cap):
+        self.cap = cap
+        self.top = -1   # points to last element inserted in stack
+        self.a = [None] * cap
 
-def push(stack, top, size):
-    if top[0] == size - 1:
-        print("\nStack overflow\n")
-    else:
-        item = int(input("Item to push: "))
-        top[0] += 1
-        if len(stack) > top[0]:
-            stack[top[0]] = item
-        else:
-            stack.append(item)
-        display(stack, top[0])
+    def push(self, x):
+        if self.top == self.cap - 1:
+            print("Stack Overflow")
+            return
+        self.top += 1   #self.top = self.top + 1
+        self.a[self.top] = x  
 
-def pop(stack, top):
-    if top[0] == -1:
-        print("\nStack underflow\n")
-    else:
-        top[0] -= 1
-        if top[0] == -1:
-            print("\nStack is now empty\n")
-        else:
-            display(stack, top[0])
+    def pop(self):
+        if self.top < 0:
+            print("Stack Underflow")
+            return
+        popped = self.a[self.top]
+        self.top -= 1
+        print(popped, " popped from stack")
+    
+    def display(self):
+        if self.top < 0:
+            print("Stack is empty")
+            return
+        print("Stack elements are:", end=" ")
+        for i in range(self.top + 1):
+            print(self.a[i], end=" ")
+        print()
 
-def main():
-    size = int(input("Enter size of stack: "))
-    stack = []
-    top = [-1]  # Use list to make top mutable
 
-    while True:
-        print("\n1. Push   2. Pop   3. exit\n")
-        choice = int(input("Choice : "))
-        if choice == 1:
-            push(stack, top, size)
-        elif choice == 2:
-            pop(stack, top)
-        elif choice == 3:
-            break
-
-if __name__ == "__main__":
-    main()
+s = Stack(5)
+s.push(10)
+s.display()
+s.push(20)
+s.push(30)
+s.display()
+s.pop()
+s.display()
