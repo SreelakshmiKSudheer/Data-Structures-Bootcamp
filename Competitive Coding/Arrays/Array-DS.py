@@ -13,4 +13,5 @@ def reverseArray(a):
         [4, 3, 2, 1]
     """
     # Write your code here
-    return a[::-1]
+    return a[::-1]      # Since list slicing returns a new list object
+    #return a.reverse()     # won't work since the reverse method doesn't return any value

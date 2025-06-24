@@ -15,7 +15,7 @@ def rotateLeft(d, arr):
         [3, 4, 5, 1, 2]
     """
     # Write your code here
-    l = len(arr)
-    result = [arr[(i+d)%l] for i in range(l)]
-    # result = [arr[(i-l+d)] for i in range(l)]
-    return result
+    l = len(arr)                                    # Get the length of the input array
+    result = [arr[(i + d) % l] for i in range(l)]   # Create a new list by picking elements from the rotated positions
+    # result = [arr[(i-l+d)] for i in range(l)]     # Alternative approach (commented out)
+    return result                                   # Return the rotated array

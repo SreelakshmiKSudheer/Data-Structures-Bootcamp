@@ -13,17 +13,17 @@ def dynamicArray(n, queries):
         List[int]: A list containing the results of all type 2 queries (the values of lastAnswer).
     """
     # Write your code here
-    lastAnswer = 0
-    arr = [[] for i in range(n)]
-    ans = []
-    
-    for q in queries:
-        num,x,y = q[0], q[1], q[2]
-        idx = (x^lastAnswer) % n
-        if num == 1:
-            arr[idx].append(y)
-        elif num == 2:
-            lastAnswer = arr[idx][y % len(arr[idx])]
-            ans.append(lastAnswer)
-            
-    return ans
+    lastAnswer = 0                               # Initialize lastAnswer to 0 as per problem statement
+    arr = [[] for i in range(n)]                 # Create a list of n empty lists (sequences)
+    ans = []                                     # List to store the results of type 2 queries
+
+    for q in queries:                            # Iterate through each query in the queries list
+        num, x, y = q[0], q[1], q[2]             # Unpack the query into its components
+        idx = (x ^ lastAnswer) % n               # Calculate the index using XOR and modulo operations
+        if num == 1:                             # If the query type is 1
+            arr[idx].append(y)                   # Append y to the sequence at index idx
+        elif num == 2:                           # If the query type is 2
+            lastAnswer = arr[idx][y % len(arr[idx])]  # Update lastAnswer with the required element
+            ans.append(lastAnswer)               # Store lastAnswer in the results list
+
+    return ans                                   # Return the results of all type 2 queries
