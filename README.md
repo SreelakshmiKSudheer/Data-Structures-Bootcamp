@@ -25,7 +25,7 @@ To provide a structured and hands-on way to understand Data Structures by combin
 - 📆 **Day-wise Tasks** and later their **Solutions**
 
 ## 📂 Folder Structure
-
+```
 Data Structures Bootcamp
 |-- Data Structures
     |-- Day 1
@@ -38,3 +38,4 @@ Data Structures Bootcamp
     |-- Day 2
         |-- Stacks
         |-- Queues
+```
