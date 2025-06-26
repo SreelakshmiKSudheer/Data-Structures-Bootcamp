@@ -47,15 +47,21 @@ q.display()     # Queue: [20, 30]
 
 q.enqueue(40)   # queue: 20 30 40
 q.enqueue(50)   # queue: 20 30 40 50
-q.enqueue(60)   # queue: 20 30 40 50 60
-q.display()     # Queue: [20, 30, 40, 50, 60]
-q.enqueue(70)   # Queue is full (Overflow)
+q.enqueue(60)   # Queue is full (Overflow)
+q.display()     # Queue: [20, 30, 40, 50]
 q.dequeue()     # dequeue 20
-q.display()     # Queue: [30, 40, 50, 60]
+q.display()     # Queue: [30, 40, 50]
 q.dequeue()     # dequeue 30
 q.dequeue()     # dequeue 40
-q.display()     # Queue: [50, 60]
+q.display()     # Queue: [50]
 q.dequeue()     # dequeue 50
-q.dequeue()     # dequeue 60
 q.display()     # Queue is empty
-q.dequeue()     # Queue is empty (Underflow)
+q.dequeue()     # Queue is empty (Underflow)   
+
+# Time Complexity:
+# - Enqueue: O(1) - Adding an item to the rear of the queue
+# - Dequeue: O(1) - Removing an item from the front of the queue
+# - Display: O(n) - Printing all elements in the queue
+# Space Complexity:
+# - O(n) - The queue uses an array of size n to store elements, where n is the capacity of the queue.
+# Note: This implementation uses a fixed-size array for the queue.

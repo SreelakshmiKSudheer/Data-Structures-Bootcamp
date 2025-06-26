@@ -39,3 +39,11 @@ s.push(30)      # 10 20 30
 s.display()     # 10 20 30
 s.pop()         # 30 popped from stack
 s.display()     # 10 20
+
+# Time Complexity:
+# - Push: O(1) - Inserting an element at the top of the stack
+# - Pop: O(1) - Removing the top element from the stack
+# - Display: O(n) - Printing all elements in the stack
+# Space Complexity:
+# - O(n) - The stack uses an array of size n to store elements, where n is the capacity of the stack.
+# Note: The stack is implemented using an array, which has a fixed size defined by the capacity.

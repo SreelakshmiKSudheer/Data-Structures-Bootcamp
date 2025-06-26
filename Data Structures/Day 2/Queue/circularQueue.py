@@ -27,7 +27,6 @@ class CircularQueue:
         self.rear = (self.rear + 1) % self.size
         self.queue[self.rear] = value
         print(f"Inserted {value} into the queue")
-        print(f"Queue state: {self.queue}")
 
     def dequeue(self):
         if self.front == -1: 
