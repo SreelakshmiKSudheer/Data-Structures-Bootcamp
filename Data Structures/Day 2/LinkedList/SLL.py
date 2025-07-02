@@ -82,6 +82,39 @@ class SinglyLinkedList:
         print(f"Deleted {deleted_data} from the beginning.")
         return deleted_data
 
+    def delete_arbitrary_position(self, position):
+        # check if the list is empty
+        if not self.head:
+            print("List is empty, cannot delete from arbitrary position.")
+            return None
+
+        # if position is 1 (beginning)
+        if position == 1:
+            deleted_data = self.head.data
+            self.head = self.head.next # move the head to next node
+            print(f"Deleted {deleted_data} from position {position}.")
+            return deleted_data
+        
+        # traverse to the node right before position 
+        current = self.head
+        count = 1
+        while current and count < position - 1:
+            current = current.next
+            count += 1
+
+        # check if position is out of bounds
+        if not current.next:
+            print(f"Position {position} is out of bounds. List has fewer than {position-1} elements.")
+            return None
+
+        # store data of the required node and delete it
+        deleted_data = current.next.data
+        deleted_node = current.next
+        current.next = current.next.next
+        deleted_node = None
+        print(f"Deleted {deleted_data} from position {position}.")
+        return deleted_data
+
     def delete_end(self):
         # Step 3: Check if the list is empty
         if not self.head:
