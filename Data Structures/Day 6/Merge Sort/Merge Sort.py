@@ -43,3 +43,29 @@ print("Sorted array:  ", arr)
 
 # Time Complexity: O(n log n) for all cases
 # Space Complexity: O(n) for the temporary arrays used during merging
+
+
+# def mergeSort(arr):
+#     if len(arr) <= 1:
+#         return arr
+    
+#     mid = len(arr)//2
+#     left = mergeSort(arr[:mid])
+#     right = mergeSort(arr[mid:])
+#     return merge(left, right)
+
+# def merge(left, right):
+#     merged = []
+#     i = j = 0
+
+#     while i < len(left) and j < len(right):
+#         if left[i] <= right[j]:
+#             merged.append(left[i])
+#             i += 1
+#         else:
+#             merged.append(right[j])
+#             j += 1
+#     merged.extend(left[i:])
+#     merged.extend(right[j:])
+
+#     return merged
