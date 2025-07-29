@@ -16,19 +16,5 @@ def getMax(operations):
                 maxStack.pop()
         elif op[0] == 3:
             result.append(maxStack[-1])
-    
-    
-    # stack = []
-    # result = []
-    
-    # for operation in operations:
-    #     op = list(map(int, operation.split()))
-    #     if op[0] == 1:
-    #         val = op[1]
-    #         stack.append(val)
-    #     elif op[0] == 2:
-    #         stack.pop()
-    #     elif op[0] == 3:
-    #         result.append(max(stack))
 
     return result
