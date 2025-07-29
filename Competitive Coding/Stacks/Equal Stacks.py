@@ -20,13 +20,13 @@ def equalStacks(h1, h2, h3):
     while not (s1 == s2 == s3):
         # If the first stack is the tallest (or tied for tallest), remove its top cylinder
         if s1 >= s2 and s1 >= s3:
-            s1 -= h1.pop(0)
+            s1 -= h1.popleft()
         # If the second stack is the tallest (or tied for tallest), remove its top cylinder
         elif s2 >= s1 and s2 >= s3:
-            s2 -= h2.pop(0)
+            s2 -= h2.popleft()
         # Otherwise, remove the top cylinder from the third stack
         else:
-            s3 -= h3.pop(0)
+            s3 -= h3.popleft()
 
     # Return the maximum possible equal height
     return s1
