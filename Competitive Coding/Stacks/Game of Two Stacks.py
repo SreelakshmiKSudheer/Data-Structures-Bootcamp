@@ -2,7 +2,8 @@ def twoStacks(maxSum, a, b):
     """
     Determines the maximum number of elements that can be removed from two stacks (represented as lists `a` and `b`)
     without the sum of the removed elements exceeding `maxSum`. Elements can be removed from either stack, but only
-    from the top (beginning of the list), and once you switch from one stack to the other, you cannot return.
+    from the top (beginning of the list). Adjustments can be made to the number of elements taken from one stack
+    to ensure the sum remains within `maxSum`, even after switching to the other stack.
     Args:
         maxSum (int): The maximum allowed sum of the removed elements.
         a (List[int]): The first stack represented as a list of integers.
