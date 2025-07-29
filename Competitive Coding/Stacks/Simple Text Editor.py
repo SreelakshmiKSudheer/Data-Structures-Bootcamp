@@ -27,6 +27,9 @@ def textEditor(operations):
             s = s[:-k]           # Remove last k characters
         elif op[0] == '3':  # Print operation
             k = int(op[1])       # Position to print (1-based index)
-            print(s[k-1])        # Print the k-th character
+            if 1 <= k <= len(s): # Validate that k is within bounds
+                print(s[k-1])    # Print the k-th character
+            else:
+                print(f"Error: Invalid position {k}.")  # Handle invalid k
         elif op[0] == '4':  # Undo operation
             s = stack.pop()      # Revert to previous state
