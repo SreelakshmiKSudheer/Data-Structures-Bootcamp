@@ -32,4 +32,7 @@ def textEditor(operations):
             else:
                 print(f"Error: Invalid position {k}.")  # Handle invalid k
         elif op[0] == '4':  # Undo operation
-            s = stack.pop()      # Revert to previous state
+            if stack:            # Check if the stack is not empty
+                s = stack.pop()  # Revert to previous state
+            else:
+                pass             # Do nothing if the stack is empty
