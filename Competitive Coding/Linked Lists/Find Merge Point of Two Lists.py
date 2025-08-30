@@ -1,4 +1,18 @@
 def findMergeNode(head1, head2):
+    """
+    Finds the data value of the node where two singly linked lists merge.
+    Given the heads of two singly linked lists that merge at some point, this function returns
+    the data value of the node where the two lists merge. If the lists do not merge, the function
+    returns None.
+    The function works by first calculating the lengths of both lists, aligning the starting points
+    so that both pointers have the same number of nodes to traverse until the end, and then traversing
+    both lists in tandem to find the merge point.
+    Args:
+        head1: The head node of the first singly linked list.
+        head2: The head node of the second singly linked list.
+    Returns:
+        The data value (int) of the merge point node if the lists merge, otherwise None.
+    """
     def get_length(head):
         count = 0
         while head:
