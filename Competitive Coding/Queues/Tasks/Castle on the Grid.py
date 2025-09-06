@@ -17,57 +17,33 @@ import sys
 #  4. INTEGER goalX
 #  5. INTEGER goalY
 #
-from collections import deque 
+from collections import deque
 
 def minimumMoves(grid, startX, startY, goalX, goalY):
-    # Write your code here
     n = len(grid)
-    queue = deque()
-    queue.append((startX, startY, 0))
     visited = [[False] * n for _ in range(n)]
+    q = deque()
+    
+    q.append((startX, startY, 0))
     visited[startX][startY] = True
     
-    while queue:
-        x, y, step = queue.popleft()
-        if x == goalX and y == goalY:
-            return step
+    while q:
+        x, y, steps = q.popleft()
         
-        #  left
-        for i in range(y-1, -1,-1):
-            if grid[x][i] == 'X':
-                break
-            else:
-                if not visited[x][i]:
-                    visited[x][i] = True
-                    queue.append((x,i,step + 1))
-                
-        #  right
-        for i in range(y+1, n):
-            if grid[x][i] == 'X':
-                break
-            else:
-                if not visited[x][i]:
-                    visited[x][i] = True
-                    queue.append((x,i,step + 1))
-                
-        #  top
-        for i in range(x-1, -1,-1):
-            if grid[i][y] == 'X':
-                break
-            else:
-                if not visited[i][y]:
-                    visited[i][y] = True
-                    queue.append((i,y,step + 1))
-                
-        #  bottom
-        for i in range(x+1, n):
-            if grid[i][y] == 'X':
-                break
-            else:
-                if not visited[i][y]:
-                    visited[i][y] = True
-                    queue.append((i,y,step + 1))
-                     
+        # Goal reached
+        if x == goalX and y == goalY:
+            return steps
+        
+        # Explore 4 directions like rook
+        for dx, dy in [(1,0), (-1,0), (0,1), (0,-1)]:
+            nx, ny = x, y
+            # Move until obstacle/edge
+            while 0 <= nx+dx < n and 0 <= ny+dy < n and grid[nx+dx][ny+dy] != 'X':
+                nx += dx
+                ny += dy
+                if not visited[nx][ny]:
+                    visited[nx][ny] = True
+                    q.append((nx, ny, steps+1))                    
                 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
